@@ -65,38 +65,46 @@ namespace ZenithWeb.Areas.Identity.Pages.Account
             [DataType(DataType.Text)]
             [StringLength(50, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 2)]
             [Display(Name = "First Name")]
+            [RegularExpression(@"^[a-zA-Z ]+$", ErrorMessage = "No numbers or special characters allowed")]
             public string FirstName { get; set; }
 
             [Required]
             [DataType(DataType.Text)]
             [StringLength(50, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 2)]
             [Display(Name = "Last Name")]
+            [RegularExpression(@"^[a-zA-Z ]+$", ErrorMessage = "No numbers or special characters allowed")]
             public string LastName { get; set; }
 
             [DataType(DataType.Text)]
             [MaxLength(50)]
+            [RegularExpression(@"^[A-Za-z0-9 ]*[A-Za-z0-9][A-Za-z0-9 ]*$", ErrorMessage = "Not a valid street")]
             public string Street { get; set; }
 
             [DataType(DataType.Text)]
             [MaxLength(50)]
+            [RegularExpression(@"^[a-zA-Z ]+$" , ErrorMessage="Not a valid city")]
             public string City { get; set; }
 
             [DataType(DataType.Text)]
             [MaxLength(50)]
+            [RegularExpression(@"^[a-zA-Z ]+$", ErrorMessage = "Not a valid province")]
             public string Province { get; set; }
 
             [DataType(DataType.Text)]
             [MaxLength(15)]
             [Display(Name = "Postal Code")]
+            [RegularExpression(@"^[A-Za-z0-9 ]*[A-Za-z0-9][A-Za-z0-9 ]*$", ErrorMessage="Not a valid postal code")]
             public string PostalCode { get; set; }
 
             [DataType(DataType.Text)]
             [MaxLength(35)]
+            [RegularExpression(@"^[a-zA-Z ]+$", ErrorMessage = "Not a valid country")]
             public string Country { get; set; }
 
             [DataType(DataType.Text)]
-            [MaxLength(10)]
+            [MaxLength(10), MinLength(10)]
             [Display(Name = "Mobile Number")]
+            [RegularExpression(@"^[0 - 9 ] *$", ErrorMessage = "Not a valid mobile number")]
             public string MobileNumber { get; set; }
 
         }
