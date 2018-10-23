@@ -1,0 +1,48 @@
+﻿@model ZenithWeb.Models.CompoundInterest
+
+@{
+    ViewData["Title"] = "Compound Interest";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@using (Html.BeginForm("Index", "CompoundInterest", FormMethod.Post))
+{
+    <table cellpadding="0" cellspacing="0">
+        <tr>
+            <th colspan="2" align="center">Compound Interest</th>
+        </tr>
+        <tr>
+            <td>Principal Amount: $</td>
+            <td>
+                @Html.TextBoxFor(m => m.P, new { type = "number", step = "0.01", min = 0, required = string.Empty })
+            </td>
+        </tr>
+        <tr>
+            <td>Annual Rate: </td>
+            <td>
+                @Html.TextBoxFor(m => m.R, new { type = "number", step = "0.0001", min = 0, required = string.Empty })
+            </td>
+        </tr>
+        <tr>
+            <td>Compound per year: </td>
+            <td>
+                @Html.TextBoxFor(m => m.N, new { type = "number", min = 1, required = string.Empty })
+            </td>
+        </tr>
+        <tr>
+            <td>Years: </td>
+            <td>
+                @Html.TextBoxFor(m => m.T, new { type = "number", min = 1,  required = string.Empty })
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Submit" /></td>
+        </tr>
+    </table>
+    <br />
+    @Html.Label("Your future value is: $")
+    @Html.DisplayFor(m => m.Result)
+
+}

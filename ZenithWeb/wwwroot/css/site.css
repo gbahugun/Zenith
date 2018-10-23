@@ -5,6 +5,17 @@ body {
     padding-bottom: 20px;
 }
 
+#home {
+    position:center;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {

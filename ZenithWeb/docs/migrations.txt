@@ -1,0 +1,7 @@
+﻿Add-Migration ExtendedUserRole -Context ApplicationDbContext
+
+Update-Database -Context ApplicationDbContext
+
+Add-Migration MobileNumber -Context ApplicationDbContext
+
+Update-Database -Context ApplicationDbContext
