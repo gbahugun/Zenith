@@ -102,9 +102,9 @@ namespace ZenithWeb.Areas.Identity.Pages.Account
             public string Country { get; set; }
 
             [DataType(DataType.Text)]
-            [MaxLength(10), MinLength(10)]
+            [MaxLength(10, ErrorMessage = "Not a valid mobile number"), MinLength(10, ErrorMessage = "Not a valid mobile number")]
             [Display(Name = "Mobile Number")]
-            [RegularExpression(@"^[0 - 9 ] *$", ErrorMessage = "Not a valid mobile number")]
+            [RegularExpression(@"^[0-9]*$", ErrorMessage = "Not a valid mobile number")]
             public string MobileNumber { get; set; }
 
         }
